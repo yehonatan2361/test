@@ -59,6 +59,17 @@ services:
             interval: 15s
             retries: 15
             timeout: 15s
+    
+    kibana:
+        image: docker.elastic.co/kibana/kibana:9.3.1
+        container_name: kibana
+        environment:
+          - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+          - SERVER_HOST=0.0.0.0
+        ports:
+          - "5601:5601"
+        depends_on:
+          - elasticsearch
 
     
     intel:

@@ -111,6 +111,7 @@ def check(data):
 
 def main():
     try:
+        log_event("a difficult problem","hahaha")
         while True:
             data = consumer.data_reader()
             if data == -1:
