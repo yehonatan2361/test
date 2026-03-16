@@ -3,6 +3,8 @@ import time
 import my_mongodb
 import json
 import logging
+from logger import log_event
+
 
 logging.basicConfig(
     level=logging.INFO,  # DEBUG, INFO, WARNING, ERROR, CRITICAL

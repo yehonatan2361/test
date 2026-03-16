@@ -5,6 +5,7 @@ import haversine
 import producer
 import json
 import logging
+from logger import log_event
 
 logging.basicConfig(
     level=logging.INFO,  # DEBUG, INFO, WARNING, ERROR, CRITICAL
@@ -88,7 +89,6 @@ def mongo_(data):
 
     if check_data(data):
         e = my_mongodb.add_data(data)
-        logger.info(88888888888)
         logger.info(e)
 
 
@@ -125,12 +125,10 @@ def main():
 
 
     except Exception as e:
-        print(e)
+        logger.info(e)
 
 
 if __name__ == "__main__":
     main()
-
-
 
 
